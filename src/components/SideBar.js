@@ -4,7 +4,7 @@ import Usuario from "./Usuario";
 export default function SideBar() {
     return (
         <div class="sidebar">
-            <Usuario />
+            <Usuario imagemUsuario="assets/img/catanacomics.svg" nomeImagemUsuario="imagem de perfil" nomeUsuario="catanacomics" />
 
             <Sugestoes />
 
