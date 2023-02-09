@@ -2,9 +2,11 @@ import Sugestoes from "./Sugestoes";
 import Usuario from "./Usuario";
 
 export default function SideBar() {
+
+
     return (
         <div class="sidebar">
-            <Usuario imagemUsuario="assets/img/catanacomics.svg" nomeImagemUsuario="imagem de perfil" nomeUsuario="catanacomics" />
+            <Usuario />
 
             <Sugestoes />
 
