@@ -11,12 +11,12 @@ export default function Sugestoes() {
     ];
 
     return (
-        <div class="sugestoes">
-            <div class="titulo">
+        <div className="sugestoes">
+            <div className="titulo">
                 Sugestões para você
                 <div>Ver tudo</div>
             </div>
-            {dadosSugestoes.map((sugestao) => <Sugestao imagemSugestao={sugestao.imagemSugestao} nomeSugestao={sugestao.nomeSugestao} />)}
+            {dadosSugestoes.map((sugestao) => <Sugestao key={sugestao.nomeSugestao} imagemSugestao={sugestao.imagemSugestao} nomeSugestao={sugestao.nomeSugestao} />)}
         </div>
     )
 }
