@@ -30,8 +30,8 @@ export default function Usuario() {
             <img data-test="profile-image" src={foto} alt={nomeUsuario} onClick={alterarFoto} />
             <div class="texto">
                 <span>
-                    <strong>{nomeUsuario}</strong>
-                    <ion-icon data-test="name" name="pencil" onClick={alterarNome}></ion-icon>
+                    <strong data-test="name">{nomeUsuario}</strong>
+                    <ion-icon data-test="edit-name" name="pencil" onClick={alterarNome}></ion-icon>
                 </span>
             </div>
         </div>
