@@ -1,18 +1,37 @@
+import React from "react";
+
 export default function Usuario() {
 
-    let nomeUsuario = prompt("Qual é o seu nome?");
-    let novaFoto = prompt("Insira aqui o link da sua nova foto.");
-
-    const nomeInicial = "usuario_sem_nome";
     const fotoInicial = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbDexwez6fwjsz-N3lcR3P5xcQH5enbLr9Og&usqp=CAU";
+
+    const [nomeUsuario, setNomeUsuario] = React.useState("usuario_sem_nome");
+    const [foto, setFoto] = React.useState(fotoInicial);
+
+    function alterarNome() {
+        const novoNome = prompt("Qual é o seu nome?");
+
+        if (novoNome !== "") {
+            setNomeUsuario(novoNome);
+        }
+
+    }
+
+    function alterarFoto() {
+        const novaFoto = prompt("Insira aqui o link da sua nova foto.");
+
+        if (novaFoto !== "") {
+            setFoto(novaFoto);
+        }
+    }
+
 
     return (
         <div class="usuario">
-            <img data-test="profile-image" src={novaFoto !== "" ? novaFoto : fotoInicial} alt="imagem de perfil" />
+            <img data-test="profile-image" src={foto} alt={nomeUsuario} onClick={alterarFoto} />
             <div class="texto">
                 <span>
-                    <strong>{nomeUsuario !== "" ? nomeUsuario : nomeInicial}</strong>
-                    <ion-icon data-test="edit-name" name="pencil"></ion-icon>
+                    <strong>{nomeUsuario}</strong>
+                    <ion-icon data-test="edit-name" name="pencil" onClick={alterarNome}></ion-icon>
                 </span>
             </div>
         </div>
