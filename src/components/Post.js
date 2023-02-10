@@ -34,25 +34,25 @@ export default function Post(props) {
 
     return (
         <>
-            <div data-test="post" className="post">
-                <div className="topo">
-                    <div className="usuario">
+            <div data-test="post" class="post">
+                <div class="topo">
+                    <div class="usuario">
                         <img src={props.imagemUsuario} alt={props.nomeUsuario} />
                         {props.nomeUsuario}
                     </div>
-                    <div className="acoes">
+                    <div class="acoes">
                         <ion-icon name="ellipsis-horizontal"></ion-icon>
                     </div>
                 </div>
 
-                <div className="conteudo">
+                <div class="conteudo">
                     <img data-test="post-image" src={props.imagemPost} alt={props.nomePost} onClick={apenasCurtirPost} />
                 </div>
 
-                <div className="fundo">
-                    <div className="acoes">
+                <div class="fundo">
+                    <div class="acoes">
                         <div>
-                            <ion-icon data-test="like-post" name={postCurtido} onClick={curtirDescurtirPost} className={postCurtido === "heart" ? "vermelho" : "nenhum"}></ion-icon>
+                            <ion-icon data-test="like-post" name={postCurtido} onClick={curtirDescurtirPost} class={postCurtido === "heart" ? "vermelho" : "nenhum"}></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
@@ -61,9 +61,9 @@ export default function Post(props) {
                         </div>
                     </div>
 
-                    <div className="curtidas">
+                    <div class="curtidas">
                         <img src={props.imagemCurtida} alt={props.nomeCurtida} />
-                        <div className="texto">
+                        <div class="texto">
                             Curtido por <strong>{props.nomeCurtida}</strong> e <strong data-test="likes-number">outras {numeroCurtidas} pessoas</strong>
                         </div>
                     </div>

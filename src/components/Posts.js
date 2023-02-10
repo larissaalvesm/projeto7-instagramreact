@@ -10,7 +10,7 @@ export default function Posts() {
     ];
 
     return (
-        <div className="posts">
+        <div class="posts">
             {dadosPosts.map((post) => <Post key={post.nomePost} imagemUsuario={post.imagemUsuario} nomeUsuario={post.nomeUsuario} imagemPost={post.imagemPost} nomePost={post.nomePost} imagemCurtida={post.imagemCurtida} nomeCurtida={post.nomeCurtida} />)}
         </div>
     )

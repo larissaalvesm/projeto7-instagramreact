@@ -28,17 +28,17 @@ export default function SideBar() {
 
 
     return (
-        <div className="sidebar">
+        <div class="sidebar">
             <Usuario nomeUsuario={nomeUsuario} foto={foto} alterarNome={alterarNome} alterarFoto={alterarFoto} />
 
             <Sugestoes />
 
-            <div className="links">
+            <div class="links">
                 Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
                 Hashtags • Idioma
             </div>
 
-            <div className="copyright">
+            <div class="copyright">
                 © 2021 INSTAGRAM DO FACEBOOK
             </div>
         </div>

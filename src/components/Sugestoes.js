@@ -11,8 +11,8 @@ export default function Sugestoes() {
     ];
 
     return (
-        <div className="sugestoes">
-            <div className="titulo">
+        <div class="sugestoes">
+            <div class="titulo">
                 Sugestões para você
                 <div>Ver tudo</div>
             </div>
