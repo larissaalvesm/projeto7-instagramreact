@@ -3,12 +3,31 @@ import { useState } from "react"
 export default function Post(props) {
 
     const [postSalvo, setpostSalvo] = useState("bookmark-outline");
+    const [postCurtido, setpostCurtido] = useState("heart-outline");
+    const [numeroCurtidas, setNumeroCurtidas] = useState(10);
 
     function salvarPost() {
         if (postSalvo === "bookmark-outline") {
             setpostSalvo("bookmark");
         } else {
             setpostSalvo("bookmark-outline");
+        }
+    }
+
+    function curtirDescurtirPost() {
+        if (postCurtido === "heart-outline") {
+            setpostCurtido("heart");
+            setNumeroCurtidas(numeroCurtidas + 1);
+        } else {
+            setpostCurtido("heart-outline")
+            setNumeroCurtidas(numeroCurtidas - 1);
+        }
+    }
+
+    function apenasCurtirPost() {
+        if (postCurtido === "heart-outline") {
+            setpostCurtido("heart");
+            setNumeroCurtidas(numeroCurtidas + 1);
         }
     }
 
@@ -27,13 +46,13 @@ export default function Post(props) {
                 </div>
 
                 <div class="conteudo">
-                    <img data-test="post-image" src={props.imagemPost} alt={props.nomePost} />
+                    <img data-test="post-image" src={props.imagemPost} alt={props.nomePost} onClick={apenasCurtirPost} />
                 </div>
 
                 <div class="fundo">
                     <div class="acoes">
                         <div>
-                            <ion-icon data-test="like-post" name="heart-outline"></ion-icon>
+                            <ion-icon data-test="like-post" name={postCurtido} onClick={curtirDescurtirPost} class={postCurtido === "heart" ? "vermelho" : "nenhum"}></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
@@ -45,7 +64,7 @@ export default function Post(props) {
                     <div class="curtidas">
                         <img src={props.imagemCurtida} alt={props.nomeCurtida} />
                         <div class="texto">
-                            Curtido por <strong>{props.nomeCurtida}</strong> e <strong>outras 101.523 pessoas</strong>
+                            Curtido por <strong>{props.nomeCurtida}</strong> e <strong>outras {numeroCurtidas} pessoas</strong>
                         </div>
                     </div>
                 </div>

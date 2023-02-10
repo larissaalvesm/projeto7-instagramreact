@@ -31,7 +31,7 @@ export default function Usuario() {
             <div class="texto">
                 <span>
                     <strong>{nomeUsuario}</strong>
-                    <ion-icon data-test="edit-name" name="pencil" onClick={alterarNome}></ion-icon>
+                    <ion-icon data-test="name" name="pencil" onClick={alterarNome}></ion-icon>
                 </span>
             </div>
         </div>
